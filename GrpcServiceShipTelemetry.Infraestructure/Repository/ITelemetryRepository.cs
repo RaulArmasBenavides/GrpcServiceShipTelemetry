@@ -10,6 +10,6 @@ namespace GrpcServiceShipTelemetry.Infraestructure.Repository
     public interface ITelemetryRepository
     {
         void AddTelemetry(Telemetry telemetry);
-        Telemetry GetTelemetry(string shipId);
+        Task<Telemetry> GetTelemetryAsync(string shipId);
     }
 }

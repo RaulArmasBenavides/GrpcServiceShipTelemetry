@@ -12,7 +12,7 @@ service Greeter {
 
 service ShipTelemetryService {
   rpc RegisterTelemetryData (TelemetryData) returns (TelemetryResponse);
-  rpc GetTelemetryData (TelemetryRequest) returns (TelemetryData);
+  rpc GetTelemetryData (TelemetryRequest) returns (GetTelemetryResponse);
 }
 
 // The request message containing the user's name.
@@ -39,4 +39,9 @@ message TelemetryRequest {
 message TelemetryResponse {
   bool success = 1;
   string message = 2;
+}
+
+message GetTelemetryResponse {
+  string message = 1;
+  TelemetryData data = 2; // Asume que TelemetryData ya está definido en otro lugar
 }

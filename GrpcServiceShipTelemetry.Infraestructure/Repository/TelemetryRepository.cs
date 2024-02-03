@@ -17,30 +17,32 @@ namespace GrpcServiceShipTelemetry.Infraestructure.Repository
             // Lógica para añadir datos de telemetría a la base de datos
         }
 
-        public Telemetry GetTelemetry(string shipId)
+        public async Task<Telemetry> GetTelemetryAsync(string shipId)
         {
-            // Aquí iría la lógica para consultar la base de datos
-            using (var connection = new SqlConnection(_connectionString))
+            var query = "SELECT * FROM Telemetry WHERE ShipId = @shipId";
+
+            using var connection = new SqlConnection(_connectionString);
+            await connection.OpenAsync();
+
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@shipId", shipId);
+
+            using (var reader = await command.ExecuteReaderAsync())
             {
-                connection.Open();
-                var command = new SqlCommand($"SELECT * FROM Telemetry WHERE ShipId = '{shipId}'", connection);
-                using (var reader = command.ExecuteReader())
+                if (await reader.ReadAsync())
                 {
-                    if (reader.Read())
+                    return new Telemetry
                     {
-                        return new Telemetry
-                        {
-                            ShipId = shipId,
-                            Latitude = (double)reader["Latitude"],
-                            Longitude = (double)reader["Longitude"],
-                            Speed = (double)reader["Speed"]
-                            // ... otros campos
-                        };
-                    }
+                        ShipId = shipId,
+                        Latitude = (double)reader["Latitude"],
+                        Longitude = (double)reader["Longitude"],
+                        Speed = (double)reader["Speed"]
+                        // ... otros campos
+                    };
                 }
             }
 
-            // Retorna null o maneja la situación en la que no se encuentran datos
+            // Retorna null si no se encuentran datos
             return null;
         }
     }
