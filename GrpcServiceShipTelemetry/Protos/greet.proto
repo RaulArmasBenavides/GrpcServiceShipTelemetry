@@ -10,6 +10,11 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply);
 }
 
+service ShipTelemetryService {
+  rpc RegisterTelemetryData (TelemetryData) returns (TelemetryResponse);
+  rpc GetTelemetryData (TelemetryRequest) returns (TelemetryData);
+}
+
 // The request message containing the user's name.
 message HelloRequest {
   string name = 1;
@@ -18,4 +23,20 @@ message HelloRequest {
 // The response message containing the greetings.
 message HelloReply {
   string message = 1;
+}
+
+message TelemetryData {
+  string shipId = 1;
+  double latitude = 2;
+  double longitude = 3;
+  double speed = 4;
+}
+
+message TelemetryRequest {
+  string shipId = 1;
+}
+
+message TelemetryResponse {
+  bool success = 1;
+  string message = 2;
 }

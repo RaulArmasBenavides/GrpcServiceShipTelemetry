@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServiceShipTelemetry", "GrpcServiceShipTelemetry\GrpcServiceShipTelemetry.csproj", "{9471D4A9-C5D0-4DC1-B080-8C7907F93474}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServiceShipTelemetry", "GrpcServiceShipTelemetry\GrpcServiceShipTelemetry.csproj", "{9471D4A9-C5D0-4DC1-B080-8C7907F93474}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServiceShipTelemetry.Application", "GrpcServiceShipTelemetry.Application\GrpcServiceShipTelemetry.Application.csproj", "{E34E1A9F-EC9F-4A36-88FF-61C09355C3FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServiceShipTelemetry.Domain", "GrpcServiceShipTelemetry.Domain\GrpcServiceShipTelemetry.Domain.csproj", "{877E96BF-5846-4A55-BDE2-A1FD25970DCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServiceShipTelemetry.Infraestructure", "GrpcServiceShipTelemetry.Infraestructure\GrpcServiceShipTelemetry.Infraestructure.csproj", "{C6D439C8-1213-4A03-9E51-BF8FF69A2671}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{9471D4A9-C5D0-4DC1-B080-8C7907F93474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9471D4A9-C5D0-4DC1-B080-8C7907F93474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9471D4A9-C5D0-4DC1-B080-8C7907F93474}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E34E1A9F-EC9F-4A36-88FF-61C09355C3FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E34E1A9F-EC9F-4A36-88FF-61C09355C3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E34E1A9F-EC9F-4A36-88FF-61C09355C3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E34E1A9F-EC9F-4A36-88FF-61C09355C3FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877E96BF-5846-4A55-BDE2-A1FD25970DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877E96BF-5846-4A55-BDE2-A1FD25970DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877E96BF-5846-4A55-BDE2-A1FD25970DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877E96BF-5846-4A55-BDE2-A1FD25970DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D439C8-1213-4A03-9E51-BF8FF69A2671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D439C8-1213-4A03-9E51-BF8FF69A2671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D439C8-1213-4A03-9E51-BF8FF69A2671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D439C8-1213-4A03-9E51-BF8FF69A2671}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
