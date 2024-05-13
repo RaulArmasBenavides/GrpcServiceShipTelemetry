@@ -1,21 +1,19 @@
 ﻿using GrpcServiceShipTelemetry.Domain.Interfaces;
 using GrpcServiceShipTelemetry.Domain.Models;
 using GrpcServiceShipTelemetry.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System.Data.SqlClient;
 
 namespace GrpcServiceShipTelemetry.Infrastructure.Repository
 {
     public class TelemetryRepository : ITelemetryRepository
     {
-        private readonly string _connectionString;
+ 
         private readonly ApplicationDbContext _bd;
         public TelemetryRepository(ApplicationDbContext bd) 
         {
             _bd = bd;
         }
-
- 
-
         public void AddTelemetry(Telemetry telemetry)
         {
             // Lógica para añadir datos de telemetría a la base de datos
@@ -24,7 +22,7 @@ namespace GrpcServiceShipTelemetry.Infrastructure.Repository
         public async Task<Telemetry> GetTelemetryAsync(string shipId)
         {
             var query = "SELECT * FROM Telemetry WHERE ShipId = @shipId";
-
+            var _connectionString = _bd.GetConnectionString();
             using var connection = new SqlConnection(_connectionString);
             await connection.OpenAsync();
 
@@ -41,7 +39,6 @@ namespace GrpcServiceShipTelemetry.Infrastructure.Repository
                         Latitude = (double)reader["Latitude"],
                         Longitude = (double)reader["Longitude"],
                         Speed = (double)reader["Speed"]
-                        // ... otros campos
                     };
                 }
             }

@@ -12,5 +12,10 @@ namespace GrpcServiceShipTelemetry.Infrastructure.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+
+        public string GetConnectionString()
+        {
+            return this.Database.GetDbConnection().ConnectionString;
+        }
     }
 }
