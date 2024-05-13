@@ -1,4 +1,6 @@
-﻿using GrpcServiceShipTelemetry.Domain;
+﻿using GrpcServiceShipTelemetry.Domain.Interfaces;
+using GrpcServiceShipTelemetry.Domain.Models;
+using GrpcServiceShipTelemetry.Infraestructure.Data;
 using System.Data.SqlClient;
 
 namespace GrpcServiceShipTelemetry.Infraestructure.Repository
@@ -6,11 +8,13 @@ namespace GrpcServiceShipTelemetry.Infraestructure.Repository
     public class TelemetryRepository : ITelemetryRepository
     {
         private readonly string _connectionString;
-
-        public TelemetryRepository(string connectionString)
+        private readonly ApplicationDbContext _bd;
+        public TelemetryRepository(ApplicationDbContext bd) 
         {
-            _connectionString = connectionString;
+            _bd = bd;
         }
+
+ 
 
         public void AddTelemetry(Telemetry telemetry)
         {

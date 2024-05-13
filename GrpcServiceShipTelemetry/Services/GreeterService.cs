@@ -1,6 +1,7 @@
 using Grpc.Core;
 using GrpcServiceShipTelemetry;
-using GrpcServiceShipTelemetry.Domain;
+using GrpcServiceShipTelemetry.Domain.Interfaces;
+using GrpcServiceShipTelemetry.Domain.Models;
 using GrpcServiceShipTelemetry.Infraestructure.Repository;
 
 namespace GrpcServiceShipTelemetry.Services
@@ -20,7 +21,7 @@ namespace GrpcServiceShipTelemetry.Services
         //    return Task.FromResult(new HelloReply
         //    {
         //        Message = "Hello " + request.Name
-        //    });
+        //   });
         //}
 
 

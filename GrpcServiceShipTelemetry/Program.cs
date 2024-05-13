@@ -1,3 +1,6 @@
+using GrpcServiceShipTelemetry.Domain.Interfaces;
+using GrpcServiceShipTelemetry.Infraestructure.Repository;
+using GrpcServiceShipTelemetry.Infraestructure;
 using GrpcServiceShipTelemetry.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
-
+builder.Services.AddScoped<ITelemetryRepository, TelemetryRepository>();
+builder.Services.AddScoped<IWorkContainer,WorkContainer>();
+builder.Services.AddPersistence(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GrpcServiceShipTelemetry.Domain.Interfaces;
+using GrpcServiceShipTelemetry.Infraestructure.Data;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,23 +11,27 @@ namespace GrpcServiceShipTelemetry.Infraestructure.Repository
 {
     public class WorkContainer : IWorkContainer
     {
-        private readonly TelemetryRepository _telemetryRepository;
-        // Otros repositorios si es necesario
+        private readonly ITelemetryRepository _telemetryRepository;
         private readonly SqlConnection _connection;
         private SqlTransaction _transaction;
-
-        public WorkContainer(string connectionString)
+        private readonly ApplicationDbContext _db;
+        public WorkContainer(ITelemetryRepository telemetryRepository)
         {
-            _connection = new SqlConnection(connectionString);
-            _connection.Open();
-            _transaction = _connection.BeginTransaction();
+            _telemetryRepository = telemetryRepository;
+            TelemetryRepository = new TelemetryRepository(_db);
+            //_connection = new SqlConnection(connectionString);
+            //_connection.Open();
+            //_transaction = _connection.BeginTransaction();
             //_telemetryRepository = new TelemetryRepository(_connection, _transaction);
             // Inicializar otros repositorios aquí
         }
+        public ITelemetryRepository TelemetryRepository { get; private set; }
 
-        public TelemetryRepository TelemetryRepository => _telemetryRepository;
+ 
 
-        ITelemetryRepository IWorkContainer.TelemetryRepository => throw new NotImplementedException();
+        //public TelemetryRepository TelemetryRepository => _telemetryRepository;
+
+        //ITelemetryRepository IWorkContainer.TelemetryRepository => throw new NotImplementedException();
 
         public void Commit()
         {

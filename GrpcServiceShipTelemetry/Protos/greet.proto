@@ -5,10 +5,7 @@ option csharp_namespace = "GrpcServiceShipTelemetry";
 package greet;
 
 // The greeting service definition.
-service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply);
-}
+
 
 service ShipTelemetryService {
   rpc RegisterTelemetryData (TelemetryData) returns (TelemetryResponse);

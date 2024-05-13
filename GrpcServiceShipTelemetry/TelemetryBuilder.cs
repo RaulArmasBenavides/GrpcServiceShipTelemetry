@@ -1,4 +1,4 @@
-﻿using GrpcServiceShipTelemetry.Domain;
+﻿using GrpcServiceShipTelemetry.Domain.Models;
 
 namespace GrpcServiceShipTelemetry
 {

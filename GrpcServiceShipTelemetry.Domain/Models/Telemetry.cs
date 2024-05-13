@@ -1,4 +1,4 @@
-﻿namespace GrpcServiceShipTelemetry.Domain
+﻿namespace GrpcServiceShipTelemetry.Domain.Models
 {
     public class Telemetry
     {

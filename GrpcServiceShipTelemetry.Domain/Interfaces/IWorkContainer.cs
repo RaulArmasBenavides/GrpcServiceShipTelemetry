@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrpcServiceShipTelemetry.Infraestructure.Repository
+namespace GrpcServiceShipTelemetry.Domain.Interfaces
 {
     public interface IWorkContainer : IDisposable
     {
@@ -15,7 +15,7 @@ namespace GrpcServiceShipTelemetry.Infraestructure.Repository
         void Commit();
         void Complete();
 
-        // Método para revertir todas las operaciones en caso de error.
+        //// Método para revertir todas las operaciones en caso de error.
         void Rollback();
     }
 }

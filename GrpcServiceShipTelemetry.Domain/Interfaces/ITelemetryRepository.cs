@@ -1,11 +1,11 @@
-﻿using GrpcServiceShipTelemetry.Domain;
+﻿using GrpcServiceShipTelemetry.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrpcServiceShipTelemetry.Infraestructure.Repository
+namespace GrpcServiceShipTelemetry.Domain.Interfaces
 {
     public interface ITelemetryRepository
     {
