@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServiceShipTelemetry", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServiceShipTelemetry.Domain", "GrpcServiceShipTelemetry.Domain\GrpcServiceShipTelemetry.Domain.csproj", "{877E96BF-5846-4A55-BDE2-A1FD25970DCB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServiceShipTelemetry.Infraestructure", "GrpcServiceShipTelemetry.Infraestructure\GrpcServiceShipTelemetry.Infraestructure.csproj", "{C6D439C8-1213-4A03-9E51-BF8FF69A2671}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServiceShipTelemetry.Infrastructure", "GrpcServiceShipTelemetry.Infraestructure\GrpcServiceShipTelemetry.Infrastructure.csproj", "{C6D439C8-1213-4A03-9E51-BF8FF69A2671}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

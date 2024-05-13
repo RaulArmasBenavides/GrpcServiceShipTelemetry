@@ -1,9 +1,9 @@
 ﻿using GrpcServiceShipTelemetry.Domain.Interfaces;
 using GrpcServiceShipTelemetry.Domain.Models;
-using GrpcServiceShipTelemetry.Infraestructure.Data;
+using GrpcServiceShipTelemetry.Infrastructure.Data;
 using System.Data.SqlClient;
 
-namespace GrpcServiceShipTelemetry.Infraestructure.Repository
+namespace GrpcServiceShipTelemetry.Infrastructure.Repository
 {
     public class TelemetryRepository : ITelemetryRepository
     {

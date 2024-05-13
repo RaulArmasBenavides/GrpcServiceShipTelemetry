@@ -1,5 +1,5 @@
 ﻿using GrpcServiceShipTelemetry.Domain.Interfaces;
-using GrpcServiceShipTelemetry.Infraestructure.Data;
+using GrpcServiceShipTelemetry.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrpcServiceShipTelemetry.Infraestructure.Repository
+namespace GrpcServiceShipTelemetry.Infrastructure.Repository
 {
     public class WorkContainer : IWorkContainer
     {

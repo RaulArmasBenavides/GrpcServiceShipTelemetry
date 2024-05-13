@@ -2,7 +2,7 @@ using Grpc.Core;
 using GrpcServiceShipTelemetry;
 using GrpcServiceShipTelemetry.Domain.Interfaces;
 using GrpcServiceShipTelemetry.Domain.Models;
-using GrpcServiceShipTelemetry.Infraestructure.Repository;
+using GrpcServiceShipTelemetry.Infrastructure.Repository;
 
 namespace GrpcServiceShipTelemetry.Services
 {

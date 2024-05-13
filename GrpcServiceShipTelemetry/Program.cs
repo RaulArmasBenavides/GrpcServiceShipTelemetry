@@ -1,6 +1,6 @@
 using GrpcServiceShipTelemetry.Domain.Interfaces;
-using GrpcServiceShipTelemetry.Infraestructure.Repository;
-using GrpcServiceShipTelemetry.Infraestructure;
+using GrpcServiceShipTelemetry.Infrastructure.Repository;
+using GrpcServiceShipTelemetry.Infrastructure;
 using GrpcServiceShipTelemetry.Services;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GrpcServiceShipTelemetry.Domain\GrpcServiceShipTelemetry.Domain.csproj" />
-    <ProjectReference Include="..\GrpcServiceShipTelemetry.Infraestructure\GrpcServiceShipTelemetry.Infraestructure.csproj" />
+    <ProjectReference Include="..\GrpcServiceShipTelemetry.Infraestructure\GrpcServiceShipTelemetry.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,10 +1,10 @@
-﻿using GrpcServiceShipTelemetry.Infraestructure.Data;
-using GrpcServiceShipTelemetry.Infraestructure.Repository;
+﻿using GrpcServiceShipTelemetry.Infrastructure.Data;
+using GrpcServiceShipTelemetry.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using GrpcServiceShipTelemetry.Domain.Interfaces;
-namespace GrpcServiceShipTelemetry.Infraestructure
+namespace GrpcServiceShipTelemetry.Infrastructure
 {
     public static class DependencyInjection
     {

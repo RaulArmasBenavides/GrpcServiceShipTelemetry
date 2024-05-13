@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrpcServiceShipTelemetry.Infraestructure.Data
+namespace GrpcServiceShipTelemetry.Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext
     {
