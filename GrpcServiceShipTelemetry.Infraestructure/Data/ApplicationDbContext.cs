@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GrpcServiceShipTelemetry.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GrpcServiceShipTelemetry.Infrastructure.Data
 {
@@ -13,9 +9,23 @@ namespace GrpcServiceShipTelemetry.Infrastructure.Data
         {
         }
 
+        public DbSet<Telemetry> Telemetries { get; set; }
+
         public string GetConnectionString()
         {
             return this.Database.GetDbConnection().ConnectionString;
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Telemetry>(entity =>
+            {
+                entity.HasKey(e => new { e.ShipId, e.Timestamp });
+                entity.Property(e => e.ShipId).HasMaxLength(50);
+                entity.Property(e => e.Timestamp).HasDefaultValueSql("GETUTCDATE()");
+            });
         }
     }
 }

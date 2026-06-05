@@ -16,10 +16,6 @@ namespace GrpcServiceShipTelemetry.Infrastructure
                   b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)),
                   ServiceLifetime.Scoped);
 
-          
-
-            //services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            //services.AddScoped<IWorkContainer, WorkContainer>();
             return services;
         }
     }

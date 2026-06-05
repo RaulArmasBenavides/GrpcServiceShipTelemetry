@@ -1,25 +1,14 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 option csharp_namespace = "GrpcServiceShipTelemetry";
 
 package greet;
 
-// The greeting service definition.
-
-
 service ShipTelemetryService {
-  rpc RegisterTelemetryData (TelemetryData) returns (TelemetryResponse);
+  rpc RegisterTelemetryDataStream (stream TelemetryData) returns (stream TelemetryResponse);
   rpc GetTelemetryData (TelemetryRequest) returns (GetTelemetryResponse);
-}
-
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
-// The response message containing the greetings.
-message HelloReply {
-  string message = 1;
 }
 
 message TelemetryData {
@@ -27,6 +16,7 @@ message TelemetryData {
   double latitude = 2;
   double longitude = 3;
   double speed = 4;
+  google.protobuf.Timestamp timestamp = 5;
 }
 
 message TelemetryRequest {
@@ -36,9 +26,10 @@ message TelemetryRequest {
 message TelemetryResponse {
   bool success = 1;
   string message = 2;
+  google.protobuf.Timestamp receivedAt = 3;
 }
 
 message GetTelemetryResponse {
   string message = 1;
-  TelemetryData data = 2; // Asume que TelemetryData ya está definido en otro lugar
+  TelemetryData data = 2;
 }
